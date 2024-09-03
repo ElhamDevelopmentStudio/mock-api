@@ -15,7 +15,11 @@ const mockDoctors = [
     description:
       "Experienced cardiologist with over 15 years of practice. Specializes in preventive cardiology and heart disease management.",
     badges: [{ label: "Heart Disease" }, { label: "Tension" }],
-    availability: ["monday", "wednesday", "friday"],
+    availability: [
+      { day: "monday", hours: ["09:00 AM - 11:00 AM", "02:00 PM - 04:00 PM"] },
+      { day: "Wednesday", hours: ["10:00 AM - 12:00 PM"] },
+      { day: "Friday", hours: ["01:00 PM - 03:00 PM"] },
+    ],
     price: 200,
     bio: "Dr. Ahmad Ahadi is a leading cardiologist known for his expertise in managing complex cardiac conditions.",
     qualifications: ["MD, Cardiology", "Fellowship in Preventive Cardiology"],
@@ -32,7 +36,10 @@ const mockDoctors = [
     description:
       "Board-certified dermatologist with a focus on skin cancer prevention and cosmetic dermatology.",
     badges: [{ label: "Skin Care" }, { label: "Cosmetics" }],
-    availability: ["tuesday", "thursday"],
+    availability: [
+      { day: "Tuesday", hours: ["09:00 AM - 12:00 PM"] },
+      { day: "Thursday", hours: ["01:00 PM - 04:00 PM"] },
+    ],
     price: 150,
     bio: "Dr. John Doe is a well-respected dermatologist with a passion for improving skin health.",
     qualifications: ["MD, Dermatology", "Board Certification in Dermatology"],
@@ -49,7 +56,10 @@ const mockDoctors = [
     description:
       "Pediatric specialist with a passion for child health and development.",
     badges: [{ label: "Child Health" }, { label: "Vaccinations" }],
-    availability: ["monday", "friday"],
+    availability: [
+      { day: "Monday", hours: ["08:00 AM - 10:00 AM"] },
+      { day: "Friday", hours: ["10:00 AM - 12:00 PM"] },
+    ],
     price: 180,
     bio: "Dr. Eliza Beth is dedicated to ensuring the healthy growth and development of children.",
     qualifications: ["MD, Pediatrics", "Certification in Child Health"],
@@ -66,7 +76,10 @@ const mockDoctors = [
     description:
       "Expert in joint replacement and sports injuries with over 20 years of experience.",
     badges: [{ label: "Bone Health" }, { label: "Sports Injuries" }],
-    availability: ["tuesday", "wednesday"],
+    availability: [
+      { day: "Tuesday", hours: ["11:00 AM - 01:00 PM"] },
+      { day: "Wednesday", hours: ["02:00 PM - 05:00 PM"] },
+    ],
     price: 300,
     bio: "Dr. Michael Brown is renowned for his expertise in orthopedic surgeries and sports medicine.",
     qualifications: ["MD, Orthopedic Surgery", "Fellowship in Sports Medicine"],
@@ -82,7 +95,10 @@ const mockDoctors = [
     specialty: "Endocrinologist",
     description: "Specializes in hormonal disorders and diabetes management.",
     badges: [{ label: "Diabetes" }, { label: "Thyroid" }],
-    availability: ["monday", "thursday"],
+    availability: [
+      { day: "Monday", hours: ["09:00 AM - 11:00 AM"] },
+      { day: "Thursday", hours: ["01:00 PM - 03:00 PM"] },
+    ],
     price: 250,
     bio: "Dr. Sarah Lee is an expert in managing complex hormonal and metabolic disorders.",
     qualifications: [
@@ -102,7 +118,10 @@ const mockDoctors = [
     description:
       "Neurology expert focusing on neurological disorders and treatments.",
     badges: [{ label: "Neurology" }, { label: "Epilepsy" }],
-    availability: ["tuesday", "friday"],
+    availability: [
+      { day: "Tuesday", hours: ["08:00 AM - 10:00 AM"] },
+      { day: "Friday", hours: ["02:00 PM - 04:00 PM"] },
+    ],
     price: 320,
     bio: "Dr. Robert Wilson is a leading neurologist with a focus on epilepsy and other neurological conditions.",
     qualifications: ["MD, Neurology", "Fellowship in Neurological Disorders"],
@@ -119,70 +138,82 @@ const mockDoctors = [
     description:
       "Provides comprehensive care in women's health, including prenatal and postnatal care.",
     badges: [{ label: "Women's Health" }, { label: "Prenatal Care" }],
-    availability: ["wednesday", "friday"],
-    price: 220,
-    bio: "Dr. Lisa White is a compassionate gynecologist dedicated to women's health.",
-    qualifications: [
-      "MD, Gynecology",
-      "Certification in Prenatal and Postnatal Care",
+    availability: [
+      { day: "Wednesday", hours: ["09:00 AM - 11:00 AM"] },
+      { day: "Friday", hours: ["01:00 PM - 03:00 PM"] },
     ],
-    phoneNumber: "098-765-4321",
+    price: 280,
+    bio: "Dr. Lisa White is known for her compassionate care in women's health and her expertise in prenatal and postnatal care.",
+    qualifications: ["MD, Gynecology", "Certification in Women's Health"],
+    phoneNumber: "432-109-8765",
     location: "San Francisco, USA",
-    email: "lisa.white@womenshealth.com",
+    email: "lisa.white@gynecology.com",
   },
   {
     id: "8",
     image:
-      "https://plus.unsplash.com/premium_photo-1658506671316-0b293df7c72b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "James Harris",
+      "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Mark Taylor",
     specialty: "Psychiatrist",
     description:
-      "Specialist in mental health, providing therapy and medication management.",
-    badges: [{ label: "Mental Health" }, { label: "Therapy" }],
-    availability: ["monday", "thursday"],
-    price: 180,
-    bio: "Dr. James Harris is a dedicated psychiatrist committed to improving mental health.",
-    qualifications: [
-      "MD, Psychiatry",
-      "Certification in Cognitive Behavioral Therapy",
+      "Expert in mental health, specializing in anxiety, depression, and trauma.",
+    badges: [{ label: "Mental Health" }, { label: "Anxiety" }],
+    availability: [
+      { day: "Monday", hours: ["10:00 AM - 12:00 PM"] },
+      { day: "Thursday", hours: ["02:00 PM - 04:00 PM"] },
     ],
-    phoneNumber: "876-543-2109",
+    price: 220,
+    bio: "Dr. Mark Taylor is a dedicated psychiatrist helping patients navigate their mental health challenges.",
+    qualifications: ["MD, Psychiatry", "Board Certification in Psychiatry"],
+    phoneNumber: "210-987-6543",
     location: "Miami, USA",
-    email: "james.harris@mentalhealth.com",
+    email: "mark.taylor@psychiatry.com",
   },
   {
     id: "9",
     image:
       "https://plus.unsplash.com/premium_photo-1681995291320-d0e369cc373d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "Emily Johnson",
-    specialty: "Oncologist",
+    name: "Nina Patel",
+    specialty: "Ophthalmologist",
     description:
-      "Oncology expert with a focus on breast cancer treatment and research.",
-    badges: [{ label: "Cancer Treatment" }, { label: "Research" }],
-    availability: ["tuesday", "friday"],
-    price: 350,
-    bio: "Dr. Emily Johnson is a leading oncologist known for her work in breast cancer research and treatment.",
-    qualifications: ["MD, Oncology", "Fellowship in Breast Cancer Research"],
-    phoneNumber: "210-987-6543",
-    location: "Dallas, USA",
-    email: "emily.johnson@oncology.com",
+      "Eye care specialist with a focus on vision correction and ocular health.",
+    badges: [{ label: "Vision Correction" }, { label: "Ocular Health" }],
+    availability: [
+      { day: "Tuesday", hours: ["10:00 AM - 12:00 PM"] },
+      { day: "Friday", hours: ["01:00 PM - 03:00 PM"] },
+    ],
+    price: 200,
+    bio: "Dr. Nina Patel is a renowned ophthalmologist specializing in vision correction and eye health.",
+    qualifications: [
+      "MD, Ophthalmology",
+      "Board Certification in Ophthalmology",
+    ],
+    phoneNumber: "109-876-5432",
+    location: "Seattle, USA",
+    email: "nina.patel@ophthalmology.com",
   },
   {
     id: "10",
     image:
-      "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name: "Oliver Martinez",
-    specialty: "Rheumatologist",
+      "https://plus.unsplash.com/premium_photo-1661775566553-f18e9b45b6b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Emily Davis",
+    specialty: "Dentist",
     description:
-      "Specializes in the diagnosis and treatment of arthritis and other rheumatic diseases.",
-    badges: [{ label: "Arthritis" }, { label: "Autoimmune Diseases" }],
-    availability: ["wednesday", "friday"],
-    price: 260,
-    bio: "Dr. Oliver Martinez is a renowned rheumatologist with extensive experience in treating autoimmune and inflammatory conditions.",
-    qualifications: ["MD, Rheumatology", "Fellowship in Autoimmune Diseases"],
-    phoneNumber: "543-210-9876",
-    location: "Seattle, USA",
-    email: "oliver.martinez@rheumatology.com",
+      "Highly skilled dentist offering comprehensive dental care, including cosmetic and restorative dentistry.",
+    badges: [
+      { label: "Cosmetic Dentistry" },
+      { label: "Restorative Dentistry" },
+    ],
+    availability: [
+      { day: "Monday", hours: ["09:00 AM - 11:00 AM"] },
+      { day: "Thursday", hours: ["01:00 PM - 03:00 PM"] },
+    ],
+    price: 180,
+    bio: "Dr. Emily Davis is known for her meticulous approach to dental care and her commitment to patient satisfaction.",
+    qualifications: ["DDS, Dentistry", "Certification in Cosmetic Dentistry"],
+    phoneNumber: "098-765-4321",
+    location: "Austin, USA",
+    email: "emily.davis@dentistry.com",
   },
 ];
 
