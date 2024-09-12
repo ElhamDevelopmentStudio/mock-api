@@ -16,7 +16,7 @@ const mockDoctors = [
       "Experienced cardiologist with over 15 years of practice. Specializes in preventive cardiology and heart disease management.",
     badges: [{ label: "Heart Disease" }, { label: "Tension" }],
     availability: [
-      { day: "monday", hours: ["09:00 AM - 11:00 AM", "02:00 PM - 04:00 PM"] },
+      { day: "Monday", hours: ["09:00 AM - 11:00 AM", "02:00 PM - 04:00 PM"] },
       { day: "Wednesday", hours: ["10:00 AM - 12:00 PM"] },
       { day: "Friday", hours: ["01:00 PM - 03:00 PM"] },
     ],
